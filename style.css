@@ -1,0 +1,68 @@
+/* Estilos personalizados */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.font-brand {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Transiciones suaves para mostrar/ocultar páginas */
+.page {
+    display: none;
+    /* Oculto por defecto */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.page.active {
+    display: block;
+    /* Visible cuando está activo */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Para el overlay del hero */
+.hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Estilo para el botón de menú seleccionado */
+.select-pack-btn.selected {
+    background-color: #047857;
+    /* emerald-700 */
+    color: white;
+    border: 2px solid #047857;
+    pointer-events: none;
+    /* No se puede clickear si ya está seleccionado */
+}
+
+.select-pack-btn {
+    background-color: white;
+    color: #059669;
+    /* emerald-600 */
+    border: 2px solid #059669;
+    transition: all 0.3s ease;
+}
+
+.select-pack-btn:hover {
+    background-color: #f0fdfa;
+    /* emerald-50 */
+}
